@@ -1,0 +1,8 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Application/IOM/Images/*
+Application/IOM/elmah_logs/
+/Application/IOM/Web.Anthony-Home.config

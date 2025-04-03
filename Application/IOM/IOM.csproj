@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8124F96-E62D-40E5-9F46-87B6E93F5D60}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IOM</RootNamespace>
+    <AssemblyName>IOM</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Json.Net, Version=1.0.16.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.Net.1.0.16\lib\netstandard2.0\Json.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Storage.Blob, Version=11.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Storage.Blob.11.1.3\lib\net452\Microsoft.Azure.Storage.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Storage.Common, Version=11.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Storage.Common.11.1.3\lib\net452\Microsoft.Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.12.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.9.12.0\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.3.0\lib\net46\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="TableDependency.SqlClient, Version=8.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.8.5.8\lib\net451\TableDependency.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi, Version=5.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.4.0\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityHubActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\TwoFactorAuthAttribute.cs" />
+    <Compile Include="Attributes\ElmahErrorAttribute.cs" />
+    <Compile Include="Attributes\LoggerAttribute.cs" />
+    <Compile Include="Attributes\StringValueAttribute.cs" />
+    <Compile Include="Attributes\TimeUpdateAttribute.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserShiftController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\SeatController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SystemLogController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\TaskGroupApiController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\TimeKeepingController.cs" />
+    <Compile Include="Controllers\TimeTickerController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DbContext\Account.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AccountMember.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetModule.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetRole.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetUser.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetUserClaim.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetUserLogin.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AspNetUserPermission.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Attendance.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AttendanceOTUpdate.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AttendanceRow.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AttendanceStatusOption.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\AttendanceStatusUpdate.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\C__RefactorLog.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\database_firewall_rules.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\EFConfiguration.cs" />
+    <Compile Include="DbContext\EmployeeShift.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\EmployeeStatu.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\EODReport.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\EODTaskItem.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetAccountList_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetAssignedAccounts_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetAssignedTeams_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetAttendanceData_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetHoursLogByDate_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_GetTeamList_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_TimeKeepingData_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\fn_TimeKeepingMgtData_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IOMDbConfig.cs" />
+    <Compile Include="DbContext\IOMEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOMEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IOMEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IOMEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOMEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IOMTask.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IOMTeamTask.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\IpWhitelist.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Location.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Notification.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\NotificationRecipientRole.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\NotificationSetting.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\NotificationType.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\RolePermission.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Seat.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GenerateEODReportPerUser_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetAttendanceDefault_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetAttendanceStatusView_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetChronoItems_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetLatestAttendanceStatusUpdates_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetNotifications_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetRecentNotifications_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetSentEODList_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetSentEODReport_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetTeamManagersandSupervisors_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetTimekeepingReport_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_GetUserSuperiors_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\sp_IOMTaskLookUp_Result.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\SystemLog.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Tag.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TaskComment.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TaskGroup.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TaskGroupItem.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TaskHistory.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TaskHistoryType.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\Team.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamClientPOC.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamDayOff.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamHoliday.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamManager.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamMember.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamSupervisor.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamTask.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TeamTaskGroup.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\TimeZone.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserDayOff.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserDetail.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserImageFile.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserNotificationSetting.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserShiftDetail.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserTag.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserTask.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserTaskGroup.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserTaskNotification.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\UserWorkDay.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\vw_ActiveUsers.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\vw_AgentTeamSupervisors.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\vw_AllUsers.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\vw_AttendanceDefaultView.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\vw_TaskClocker.cs">
+      <DependentUpon>IOMEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\ParentRecordNotFound.cs" />
+    <Compile Include="Helpers\AppConfigurations.cs" />
+    <Compile Include="Helpers\CheckUserAuthorization.cs" />
+    <Compile Include="Helpers\Extension.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\EmailBody.cs" />
+    <Compile Include="Helpers\IOMGlobals.cs" />
+    <Compile Include="Helpers\RestrictiveMultipartMemoryStreamProvider.cs" />
+    <Compile Include="Helpers\UtilityEnum.cs" />
+    <Compile Include="Helpers\QueryExtensions.cs" />
+    <Compile Include="Hubs\AutoOutHub.cs" />
+    <Compile Include="Hubs\DashboardDataHub.cs" />
+    <Compile Include="Hubs\Models\TkManagementRequest.cs" />
+    <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="Hubs\TkManagementHub.cs" />
+    <Compile Include="Hubs\UserNotificationHub.cs" />
+    <Compile Include="Hubs\UserSessionHub.cs" />
+    <Compile Include="Hubs\Util\TimeManager.cs" />
+    <Compile Include="IOMExtensions.cs" />
+    <Compile Include="Models\ApiControllerModels\AccountDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\AccountSeatModel.cs" />
+    <Compile Include="Models\ApiControllerModels\ApiResult.cs" />
+    <Compile Include="Models\ApiControllerModels\AppInfo.cs" />
+    <Compile Include="Models\ApiControllerModels\AttendanceDay.cs" />
+    <Compile Include="Models\ApiControllerModels\AttendanceDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\AttendanceIndividual.cs" />
+    <Compile Include="Models\ApiControllerModels\AttendanceRowModel.cs" />
+    <Compile Include="Models\ApiControllerModels\BaseModel.cs" />
+    <Compile Include="Models\ApiControllerModels\ChangeAccountModel.cs" />
+    <Compile Include="Models\ApiControllerModels\DashboardData.cs" />
+    <Compile Include="Models\ApiControllerModels\DayOffHolidayModel.cs" />
+    <Compile Include="Models\ApiControllerModels\EODRecipients.cs" />
+    <Compile Include="Models\ApiControllerModels\EODReportModel.cs" />
+    <Compile Include="Models\ApiControllerModels\IPWhitelist.cs" />
+    <Compile Include="Models\ApiControllerModels\LocationModel.cs" />
+    <Compile Include="Models\ApiControllerModels\LookUpModel.cs" />
+    <Compile Include="Models\ApiControllerModels\NotificationModel.cs" />
+    <Compile Include="Models\ApiControllerModels\OtpCode.cs" />
+    <Compile Include="Models\ApiControllerModels\PasswordModel.cs" />
+    <Compile Include="Models\ApiControllerModels\PermissionsModel.cs" />
+    <Compile Include="Models\ApiControllerModels\Settings\NotificationRecipientRoleModel.cs" />
+    <Compile Include="Models\ApiControllerModels\Settings\NotificationSettingModel.cs" />
+    <Compile Include="Models\ApiControllerModels\StatusBindingModel.cs" />
+    <Compile Include="Models\ApiControllerModels\SupportEmail.cs" />
+    <Compile Include="Models\ApiControllerModels\SystemLogDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TaskAssigneesModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TaskDashboardDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TaskDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TaskGroupModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TeamDataModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TeamTaskModels.cs" />
+    <Compile Include="Models\ApiControllerModels\TimeZoneModel.cs" />
+    <Compile Include="Models\ApiControllerModels\UserBaseModel.cs" />
+    <Compile Include="Models\ApiControllerModels\UserNotificationSettingResult.cs" />
+    <Compile Include="Models\ApiControllerModels\UserShiftDataRequest.cs" />
+    <Compile Include="Models\ApiControllerModels\UsersRawModel.cs" />
+    <Compile Include="Models\ApiControllerModels\UserInfoModel.cs" />
+    <Compile Include="Models\ApiControllerModels\TagModel.cs" />
+    <Compile Include="Models\ApiControllerModels\UserWorkday.cs" />
+    <Compile Include="Models\Data\EODList.cs" />
+    <Compile Include="Models\Data\EODReportDetails.cs" />
+    <Compile Include="Models\SeatDashboardViewModel.cs" />
+    <Compile Include="Models\TaskDetails.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\TransactionResult.cs" />
+    <Compile Include="Models\UserDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\ErrorMailModuleProvider.cs" />
+    <Compile Include="Providers\QueryStringOAuthBearerProvider.cs" />
+    <Compile Include="Services\AccountMemberService.cs" />
+    <Compile Include="Services\AccountServices.cs" />
+    <Compile Include="Services\Interface\IAccountMemberService.cs" />
+    <Compile Include="Services\Interface\IAccountServices.cs" />
+    <Compile Include="Services\Interface\IAppServices.cs" />
+    <Compile Include="Services\Interface\IAttendanceServices.cs" />
+    <Compile Include="Services\Interface\IAzureStorageServices.cs" />
+    <Compile Include="Services\Interface\IDashboardServices.cs" />
+    <Compile Include="Services\Interface\IEODServices.cs" />
+    <Compile Include="Services\Interface\INotificationServices.cs" />
+    <Compile Include="Services\Interface\IPermissionServices.cs" />
+    <Compile Include="Services\Interface\IRoleServices.cs" />
+    <Compile Include="Services\Interface\ISeatServices.cs" />
+    <Compile Include="Services\Interface\ISettingsServices.cs" />
+    <Compile Include="Services\Interface\ISystemLogServices.cs" />
+    <Compile Include="Services\Interface\ITagServices.cs" />
+    <Compile Include="Services\Interface\ITaskGroupServices.cs" />
+    <Compile Include="Services\Interface\ITaskServices.cs" />
+    <Compile Include="Services\Interface\ITeamMemberService.cs" />
+    <Compile Include="Services\Interface\ITeamServices.cs" />
+    <Compile Include="Services\Interface\ITimeKeepingServices.cs" />
+    <Compile Include="Services\Interface\IUserServices.cs" />
+    <Compile Include="Services\Interface\IUserShiftServices.cs" />
+    <Compile Include="Services\SeatServices.cs" />
+    <Compile Include="Services\TagServices.cs" />
+    <Compile Include="Services\AppServices.cs" />
+    <Compile Include="Services\AttendanceServices.cs" />
+    <Compile Include="Services\AzureStorageServices.cs" />
+    <Compile Include="Services\DashboardServices.cs" />
+    <Compile Include="Services\EODServices.cs" />
+    <Compile Include="Services\NotificationServices.cs" />
+    <Compile Include="Services\PermissionServices.cs" />
+    <Compile Include="Services\RoleServices.cs" />
+    <Compile Include="Services\SendGridMailServices.cs" />
+    <Compile Include="Services\SettingsServices.cs" />
+    <Compile Include="Services\SystemLogServices.cs" />
+    <Compile Include="Services\TaskGroupServices.cs" />
+    <Compile Include="Services\TaskServices.cs" />
+    <Compile Include="Services\TeamMemberService.cs" />
+    <Compile Include="Services\TeamServices.cs" />
+    <Compile Include="Services\TimeKeepingService.cs" />
+    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="Services\UserShiftServices.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\AzureAppSettings.cs" />
+    <Compile Include="Utilities\DateTimeUtility.cs" />
+    <Compile Include="Utilities\EmailNotificationSettingsProvide.cs" />
+    <Compile Include="Utilities\EmailSettings.cs" />
+    <Compile Include="Utilities\IOMEnums.cs" />
+    <Compile Include="Utilities\ServiceUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="DbContext\IOMEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IOMEntities.edmx</DependentUpon>
+      <LastGenOutput>IOMEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbContext\IOMEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IOMEntities.edmx</DependentUpon>
+      <LastGenOutput>IOMEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="libman.json" />
+    <EntityDeploy Include="DbContext\IOMEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IOMEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DbContext\IOMEntities.edmx.diagram">
+      <DependentUpon>IOMEntities.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\iomdev - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\iomdev - Web Deploy.pubxml" />
+    <Content Include="Scripts\Modules\Account\accounts.js" />
+    <Content Include="Scripts\Modules\Account\account_manager.js" />
+    <Content Include="Scripts\Modules\dashboard.js" />
+    <Content Include="Scripts\Modules\profile.js" />
+    <Content Include="Scripts\Modules\role_permission.js" />
+    <Content Include="Scripts\Modules\systemlogs.js" />
+    <Content Include="Scripts\Modules\Team\teams.js" />
+    <Content Include="Scripts\Modules\Team\team_manager.js" />
+    <Content Include="Scripts\Modules\TimeKeeping\management.js" />
+    <Content Include="Scripts\Modules\TimeKeeping\attendanceManager.js" />
+    <Content Include="Scripts\Modules\TimeKeeping\report.js" />
+    <Content Include="Scripts\Modules\users.js" />
+    <Content Include="Scripts\Modules\user_resetpass.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\validator\validator.js" />
+    <Content Include="Scripts\validator\validator.min.js" />
+    <Content Include="Templates\DeleteAccount.html" />
+    <Content Include="Templates\DeleteTeamForAdminAndManagers.html" />
+    <Content Include="Templates\DeleteTeamForAgents.html" />
+    <Content Include="Templates\EODApprovedDenied.html" />
+    <Content Include="Templates\EODReportTPL.html" />
+    <Content Include="Templates\EODRequestApproval.html" />
+    <Content Include="Templates\ForgotPassword.html" />
+    <Content Include="Templates\PasswordResetRequest.html" />
+    <Content Include="Templates\PasswordResetSuccess.html" />
+    <Content Include="Templates\PasswordResetUpdate.html" />
+    <Content Include="Templates\Registration.html" />
+    <Content Include="Templates\RegistrationForAdmin.html" />
+    <Content Include="Templates\RegistrationForCoManager.html" />
+    <Content Include="Templates\RegistrationForCoSupervisor.html" />
+    <Content Include="Templates\RegistrationForManager.html" />
+    <Content Include="Templates\RemoveMember.html" />
+    <Content Include="Templates\SupportInquiry.html" />
+    <Content Include="Templates\TaskActivationNotification.html" />
+    <Content Include="Templates\UpdateSeatStatus.html" />
+    <Content Include="Templates\UpdateTask.html" />
+    <Content Include="Templates\UserDelete.html" />
+    <Content Include="Templates\UserDeleteForAdmin.html" />
+    <Content Include="Templates\UserDeleteForManager.html" />
+    <Content Include="Templates\UserDeleteForSupervisor.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Util\iom-apiauth.js" />
+    <Content Include="Scripts\Util\iom-jquery.plugins.js" />
+    <None Include="Web.Development.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Jon-Office-Prod.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Jonathan-Home.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Jonathan-Office.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Kenneth-local.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.StagingEU.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\SecurityCodeScan.VS2019.5.2.1\analyzers\dotnet\SecurityCodeScan.VS2019.dll" />
+    <Analyzer Include="..\packages\SecurityCodeScan.VS2019.5.2.1\analyzers\dotnet\YamlDotNet.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jonathan-Office|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jonathan-Home|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jon-Office-Prod|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StagingEU|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Kenneth-local|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="BeforeBuild">
+    <TransformXml Source="Web.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
+  </Target>
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64702</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44300/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

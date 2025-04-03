@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>IOMDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{25a3c0bd-b293-40b1-81bd-eb9319d5e174}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>IOMDatabase</RootNamespace>
+    <AssemblyName>IOMDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Jonathan-Office|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Jonathan-Home|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Jon-Office-Prod|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging-eu|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'StagingEU|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="dbo\Functions" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="Scripts\Template" />
+    <Folder Include="dbo\Procedures\" />
+    <Folder Include="PostDeplomentScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Procedures\sp_GetRecentNotifications.sql" />
+    <Build Include="dbo\Procedures\sp_TimekeepingManagementPhUsers.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\UserDetails.sql" />
+    <Build Include="dbo\Tables\Teams.sql" />
+    <Build Include="dbo\Tables\Account.sql" />
+    <Build Include="dbo\Tables\TeamTasks.sql" />
+    <None Include="PostDeplomentScripts\IOM-509_shift_manager.sql" />
+    <None Include="PostDeplomentScripts\IOM-587_email_notification.sql" />
+    <None Include="PostDeplomentScripts\IOM-625_seats_nav_menu.sql" />
+    <None Include="PostDeplomentScripts\Module_Order_Updater.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="dbo\Tables\AspNetModules.sql" />
+    <Build Include="dbo\Tables\AspNetUserPermission.sql" />
+    <Build Include="dbo\Tables\TaskHistory.sql" />
+    <Build Include="dbo\Tables\TaskHistoryType.sql" />
+    <Build Include="dbo\Functions\fn_TimeKeepingMgtData.sql" />
+    <Build Include="dbo\Procedures\sp_UpdateUserActiveHours.sql" />
+    <Build Include="dbo\Tables\EmployeeStatus.sql" />
+    <Build Include="dbo\Tables\EmployeeShift.sql" />
+    <Build Include="dbo\Tables\RolePermissions.sql" />
+    <Build Include="dbo\Tables\SystemLog.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Procedures\sp_UpdateUserRole.sql" />
+    <Build Include="dbo\Procedures\sp_UpdateUserRolePermissions.sql" />
+    <Build Include="dbo\Procedures\sp_UpdateUserPermissions.sql" />
+    <Build Include="dbo\Procedures\sp_KickOutAllUsers.sql" />
+    <Build Include="dbo\Tables\Notification.sql" />
+    <Build Include="dbo\Tables\TeamDayOff.sql" />
+    <Build Include="dbo\Tables\TeamHoliday.sql" />
+    <Build Include="dbo\Tables\UserDayOff.sql" />
+    <Build Include="dbo\Procedures\sp_DeleteUser.sql" />
+    <Build Include="dbo\Tables\Attendance.sql" />
+    <Build Include="dbo\Procedures\sp_CollectTimeLogs.sql" />
+    <Build Include="dbo\Procedures\sp_DeleteTeam.sql" />
+    <Build Include="dbo\Tables\UserImageFile.sql" />
+    <Build Include="dbo\Tables\TeamClientPOC.sql" />
+    <Build Include="dbo\Procedures\sp_GetTeamManagersandSupervisors.sql" />
+    <Build Include="dbo\Procedures\sp_GetSentEODReport.sql" />
+    <Build Include="dbo\Tables\EODReports.sql" />
+    <Build Include="dbo\Tables\EODTaskItems.sql" />
+    <Build Include="dbo\Procedures\sp_AttendanceDefaultView.sql" />
+    <Build Include="dbo\Views\vw_AttendanceDefaultView.sql" />
+    <Build Include="dbo\Procedures\sp_GetAttendanceDefault.sql" />
+    <Build Include="dbo\Procedures\sp_GetChronoItems.sql" />
+    <Build Include="dbo\Procedures\sp_GetAttendanceStatusView.sql" />
+    <Build Include="dbo\Tables\AttendanceStatusUpdates.sql" />
+    <Build Include="dbo\Procedures\sp_GetLatestAttendanceStatusUpdates.sql" />
+    <Build Include="dbo\Tables\AttendanceOTUpdates.sql" />
+    <Build Include="dbo\Tables\AttendanceStatusOptions.sql" />
+    <Build Include="dbo\Views\vw_AgentTeamSupervisors.sql" />
+    <Build Include="dbo\Tables\TaskComment.sql" />
+    <Build Include="dbo\Procedures\sp_GetTimekeepingReport.sql" />
+    <Build Include="dbo\Procedures\sp_GetSentEODList.sql" />
+    <Build Include="dbo\Tables\TeamMember.sql" />
+    <Build Include="dbo\Tables\AccountMember.sql" />
+    <Build Include="dbo\Views\vw_ActiveUsers.sql" />
+    <Build Include="dbo\Views\vw_TaskClocker.sql" />
+    <Build Include="dbo\Procedures\sp_GetEODList.sql" />
+    <Build Include="dbo\Tables\IOMTasks.sql" />
+    <Build Include="dbo\Tables\IOMTeamTask.sql" />
+    <Build Include="dbo\Tables\TaskGroupItems.sql" />
+    <Build Include="dbo\Tables\TaskGroups.sql" />
+    <Build Include="dbo\Tables\TeamTaskGroup.sql" />
+    <Build Include="dbo\Tables\UserTask.sql" />
+    <Build Include="dbo\Tables\UserTaskGroup.sql" />
+    <Build Include="dbo\Tables\UserTaskNotifications.sql" />
+    <Build Include="dbo\Views\vw_AllUsers.sql" />
+    <Build Include="dbo\Procedures\sp_GetUserList.sql" />
+    <Build Include="dbo\Procedures\sp_IOMTaskLookUp.sql" />
+    <Build Include="dbo\Functions\fn_GetAssignedAccounts.sql" />
+    <Build Include="dbo\Functions\fn_GetAssignedTeams.sql" />
+    <Build Include="dbo\Procedures\sp_GetTimekeepingManagementGridData.sql" />
+    <Build Include="dbo\Procedures\sp_GetTimekeepingReportGridData.sql" />
+    <Build Include="Scripts\Post-Deployments-archive.sql" />
+    <Build Include="dbo\Tables\Location.sql" />
+    <Build Include="dbo\Procedures\sp_GenerateEODReportPerUser.sql" />
+    <Build Include="dbo\Procedures\sp_GetAttendanceDefaultGridData.sql" />
+    <Build Include="dbo\Tables\Tag.sql" />
+    <Build Include="dbo\Tables\UserTag.sql" />
+    <None Include="PostDeplomentScripts\notification_page.sql" />
+    <Build Include="dbo\Procedures\sp_GetNotifications.sql" />
+    <Build Include="dbo\Procedures\sp_GetUserSuperiors.sql" />
+    <Build Include="dbo\Procedures\sp_GetSystemLogs.sql" />
+    <Build Include="dbo\Tables\Seat.sql" />
+    <Build Include="dbo\Tables\IpWhitelist.sql" />
+    <Build Include="dbo\Tables\NotificationType.sql" />
+    <Build Include="dbo\Tables\UserNotificationSetting.sql" />
+    <Build Include="dbo\Tables\UserShiftDetail.sql" />
+    <Build Include="dbo\Tables\UserWorkDay.sql" />
+    <Build Include="dbo\Procedures\sp_GetUserShiftData.sql" />
+    <Build Include="dbo\Tables\NotificationSetting.sql" />
+    <None Include="PostDeplomentScripts\IOM-520_Notification_control.sql" />
+    <Build Include="dbo\Tables\TimeZone.sql" />
+    <Build Include="dbo\Tables\NotificationRecipientRole.sql" />
+    <Build Include="AttendanceRow.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="IOMDatabase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\post-dep-archive.sql" />
+    <None Include="PostDeplomentScripts\seat.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeplomentScripts\iom-523_9-6-2021.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeplomentScripts\Post-Deploy.sql" />
+    <None Include="PostDeplomentScripts\ip-whitelist.sql" />
+  </ItemGroup>
+</Project>

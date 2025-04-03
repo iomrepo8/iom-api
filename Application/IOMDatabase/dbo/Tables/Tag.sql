@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Tag]
+(
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] VARCHAR(65) NULL, 
+    [DateCreated] DATETIME NULL DEFAULT GETUTCDATE(), 
+    [IsDeleted] BIT NOT NULL DEFAULT 0
+)

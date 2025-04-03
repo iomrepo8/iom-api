@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountNameDuplicate" xml:space="preserve">
+    <value>Account name is already taken.</value>
+  </data>
+  <data name="AccountNotFound" xml:space="preserve">
+    <value>Account not found.</value>
+  </data>
+  <data name="AgentNotFound" xml:space="preserve">
+    <value>Agent not found.</value>
+  </data>
+  <data name="BreakLimit" xml:space="preserve">
+    <value>You've already used up all your breaks.</value>
+  </data>
+  <data name="EmailExist" xml:space="preserve">
+    <value>Email is already in used.</value>
+  </data>
+  <data name="EmailNotReg" xml:space="preserve">
+    <value>Email not registered.</value>
+  </data>
+  <data name="ErrorAddToRole" xml:space="preserve">
+    <value>User not added a role.</value>
+  </data>
+  <data name="NonAlphanumric" xml:space="preserve">
+    <value>non-alphanumeric</value>
+  </data>
+  <data name="NonLetterOrDigit" xml:space="preserve">
+    <value>non letter or digit</value>
+  </data>
+  <data name="PasswordReset" xml:space="preserve">
+    <value>iLucent Password Reset</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>Password Reset Successful.</value>
+  </data>
+  <data name="RemAgentStatus" xml:space="preserve">
+    <value>&lt;b&gt;REMINDER:&lt;/b&gt; Please check all agents and users under your supervision to ensure that they are displaying accurate information on their IOM status.</value>
+  </data>
+  <data name="RemAgentStatusTitle" xml:space="preserve">
+    <value>Reminder: Agent status</value>
+  </data>
+  <data name="ReminderIcon" xml:space="preserve">
+    <value>fa-bell</value>
+  </data>
+  <data name="RoleAgent" xml:space="preserve">
+    <value>User role must be an Agent.</value>
+  </data>
+  <data name="RoleLA" xml:space="preserve">
+    <value>User role must be a Lead Agent.</value>
+  </data>
+  <data name="LANotFound" xml:space="preserve">
+    <value>Lead Agent not found.</value>
+  </data>
+  <data name="TaskDefaultDescAdmin" xml:space="preserve">
+    <value>E-mail Correspondence, Task Review and general admin work</value>
+  </data>
+  <data name="TaskDefaultDescMeeting" xml:space="preserve">
+    <value>Focus-Group Discussions and Team or Office Meeting</value>
+  </data>
+  <data name="TaskDefaultDescTraining" xml:space="preserve">
+    <value>Training for new tasks, new staff, refresher or cross-training</value>
+  </data>
+  <data name="TaskDefaultNameAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="TaskDefaultNameMeeting" xml:space="preserve">
+    <value>Meeting</value>
+  </data>
+  <data name="TaskDefaultNameTraining" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="TaskNameExist" xml:space="preserve">
+    <value>Task name or Task Id already exist. Please pick a new one.</value>
+  </data>
+  <data name="TaskNotFound" xml:space="preserve">
+    <value>Task not found.</value>
+  </data>
+  <data name="TeamNameExist" xml:space="preserve">
+    <value>Team name already exist. Please pick a new one.</value>
+  </data>
+  <data name="TeamNotFound" xml:space="preserve">
+    <value>Team not found.</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Thank you from iLucent</value>
+  </data>
+  <data name="TeamUpdateDOHSuccess" xml:space="preserve">
+    <value>Successfully updated Day-Offs &amp; Holidays</value>
+  </data>
+  <data name="UnableToDeleteTask" xml:space="preserve">
+    <value>Unable to delete task because it associated with data in the time keeping history.</value>
+  </data>
+  <data name="AgentSuccessAdd" xml:space="preserve">
+    <value>Agent successfully added.</value>
+  </data>
+  <data name="LASuccessAdd" xml:space="preserve">
+    <value>Lead Agent(s)  successfully added.</value>
+  </data>
+  <data name="TaskSuccessAdd" xml:space="preserve">
+    <value>Task successfully added.</value>
+  </data>
+  <data name="TaskSuccessUpdate" xml:space="preserve">
+    <value>Task successfully updated.</value>
+  </data>
+  <data name="AccountSuccessAdd" xml:space="preserve">
+    <value>Account successfully added.</value>
+  </data>
+  <data name="AccountSuccessDelete" xml:space="preserve">
+    <value>Account successfully deleted.</value>
+  </data>
+  <data name="AccountSuccessUpdate" xml:space="preserve">
+    <value>Account successfully updated.</value>
+  </data>
+  <data name="AgentSuccessRemove" xml:space="preserve">
+    <value>Agent successfully removed.</value>
+  </data>
+  <data name="PasswordResetEmailSent" xml:space="preserve">
+    <value>Reset password email sent.</value>
+  </data>
+  <data name="LASuccessRemove" xml:space="preserve">
+    <value>Lead Agent successfully removed.</value>
+  </data>
+  <data name="TaskSuccessDelete" xml:space="preserve">
+    <value>Task successfully deleted.</value>
+  </data>
+  <data name="TeamSuccessAdd" xml:space="preserve">
+    <value>Team successfully added.</value>
+  </data>
+  <data name="TeamSuccessDelete" xml:space="preserve">
+    <value>Team successfully deleted.</value>
+  </data>
+  <data name="TeamSuccessUpdate" xml:space="preserve">
+    <value>Team successfully updated.</value>
+  </data>
+  <data name="UserSuccessCreate" xml:space="preserve">
+    <value>User successfully created.</value>
+  </data>
+  <data name="UserSuccessDelete" xml:space="preserve">
+    <value>User successfully deleted.</value>
+  </data>
+  <data name="UserSuccessUpdateDetail" xml:space="preserve">
+    <value>User detail updated successfully.</value>
+  </data>
+  <data name="UserSuccessLock" xml:space="preserve">
+    <value>User successfully deactivated</value>
+  </data>
+  <data name="UserSuccessStatusChange" xml:space="preserve">
+    <value>User status successfully changed.</value>
+  </data>
+  <data name="RuleUserAgent" xml:space="preserve">
+    <value>User must be an agent.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="UserSuccessAccountChange" xml:space="preserve">
+    <value>User's assigned account successfully updated.</value>
+  </data>
+  <data name="UserSuccessTeamsChange" xml:space="preserve">
+    <value>User's assigned teams successfully updated.</value>
+  </data>
+  <data name="AccountManagerSuccessAdd" xml:space="preserve">
+    <value>Account manager(s) successfully added.</value>
+  </data>
+  <data name="RoleAccountManager" xml:space="preserve">
+    <value>User role must be an Account Manager.</value>
+  </data>
+  <data name="ClientSuccessAdd" xml:space="preserve">
+    <value>Client(s) successfully added.</value>
+  </data>
+  <data name="RoleClient" xml:space="preserve">
+    <value>User role must be a Client POC.</value>
+  </data>
+  <data name="RemAttendanceData" xml:space="preserve">
+    <value>&lt;b&gt;REMINDER:&lt;/b&gt; Please ensure that you have checked the attendance report and have corrected any discrepancies.</value>
+  </data>
+  <data name="RemAttendanceDataTitle" xml:space="preserve">
+    <value>Reminder: Attendance Data</value>
+  </data>
+  <data name="PasswordResetForgot" xml:space="preserve">
+    <value>Link for reset of password is sent to your email.</value>
+  </data>
+  <data name="SupportReplyMsg" xml:space="preserve">
+    <value>Thank you for reaching us. We will get back to you as soon as possible.</value>
+  </data>
+  <data name="ProfilePictureFailUpload" xml:space="preserve">
+    <value>Profile picture upload failed.</value>
+  </data>
+  <data name="ProfilePictureSuccessUpload" xml:space="preserve">
+    <value>Profile picture successfully uploaded.</value>
+  </data>
+  <data name="UserSuccessUnlock" xml:space="preserve">
+    <value>User successfully activated.</value>
+  </data>
+  <data name="UserDeletedkey" xml:space="preserve">
+    <value>user_deleted</value>
+  </data>
+  <data name="UserDeletedMsg" xml:space="preserve">
+    <value>User account has been deleted.</value>
+  </data>
+  <data name="UserInvalidKey" xml:space="preserve">
+    <value>invalid_grant</value>
+  </data>
+  <data name="UserInvalidMsg" xml:space="preserve">
+    <value>The user name or password is incorrect.</value>
+  </data>
+  <data name="UserLockedKey" xml:space="preserve">
+    <value>user_locked</value>
+  </data>
+  <data name="UserLockedMsg" xml:space="preserve">
+    <value>User account has been locked please contact your System Administrator.</value>
+  </data>
+  <data name="NameMasked" xml:space="preserve">
+    <value>••••••••••••</value>
+  </data>
+  <data name="ClientNotFound" xml:space="preserve">
+    <value>Client not found.</value>
+  </data>
+  <data name="ClientSuccessRemove" xml:space="preserve">
+    <value>Client successfully removed.</value>
+  </data>
+  <data name="AgentSuccessEditAssTeams" xml:space="preserve">
+    <value>Agent successfully edited assigned teams.</value>
+  </data>
+  <data name="LASuccessEditAssTeams" xml:space="preserve">
+    <value>Lead Agent successfully edited assigned teams.</value>
+  </data>
+  <data name="TeamSuccessDeactivate" xml:space="preserve">
+    <value>Team successfully deactivated.</value>
+  </data>
+  <data name="AccountSuccessDeactivate" xml:space="preserve">
+    <value>Account successfully deactivated.</value>
+  </data>
+  <data name="AccountSuccessActivate" xml:space="preserve">
+    <value>Account successfully activated.</value>
+  </data>
+  <data name="TeamSuccessActivate" xml:space="preserve">
+    <value>Team successfully activated.</value>
+  </data>
+  <data name="EODApproved" xml:space="preserve">
+    <value>EOD Report approved.</value>
+  </data>
+  <data name="EODDenied" xml:space="preserve">
+    <value>EOD Report denied.</value>
+  </data>
+  <data name="EODNotAuthorized" xml:space="preserve">
+    <value>You are not authorized for this action.</value>
+  </data>
+  <data name="EODProcessError" xml:space="preserve">
+    <value>There was an error in processing your request please contact your System Administrator.</value>
+  </data>
+  <data name="EODAlreadyApproved" xml:space="preserve">
+    <value>This item has already been approved by {0} on {1} at {2}.</value>
+  </data>
+  <data name="EODAlreadyDenied" xml:space="preserve">
+    <value>This item has already been denied by {0} on {1} at {2}.</value>
+  </data>
+  <data name="AccountManagerSuccessRemove" xml:space="preserve">
+    <value>Account manager successfully removed.</value>
+  </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="TeamManagerSuccessAdd" xml:space="preserve">
+    <value>Team Manager(s) successfully added.</value>
+  </data>
+  <data name="TeamManagerSuccessRemove" xml:space="preserve">
+    <value>Team Manager successfully removed</value>
+  </data>
+  <data name="DataNotFound" xml:space="preserve">
+    <value>Process request failed due to data not found.</value>
+  </data>
+  <data name="TaskGroupCreated" xml:space="preserve">
+    <value>Task Group Created</value>
+  </data>
+  <data name="TaskGroupDeleted" xml:space="preserve">
+    <value>Task Group Deleted</value>
+  </data>
+  <data name="TaskGroupUpdated" xml:space="preserve">
+    <value>Task Group Updated</value>
+  </data>
+  <data name="TaskGroupSuccessAdd" xml:space="preserve">
+    <value>Task Group successfully added.</value>
+  </data>
+  <data name="TaskGroupSuccessRemove" xml:space="preserve">
+    <value>Task Group successfully deleted.</value>
+  </data>
+  <data name="TaskSuccessAssign" xml:space="preserve">
+    <value>Task successfully assigned to a team.</value>
+  </data>
+  <data name="TaskSuccessRemove" xml:space="preserve">
+    <value>Task successfully remove from a team.</value>
+  </data>
+  <data name="UserSuccessAdd" xml:space="preserve">
+    <value>User successfully added</value>
+  </data>
+  <data name="UserSuccessRemove" xml:space="preserve">
+    <value>User successfully removed</value>
+  </data>
+  <data name="UserTaskNotificationUpdateError" xml:space="preserve">
+    <value>Failed to update user task notification.</value>
+  </data>
+  <data name="UserTaskNotificationUpdateSuccess" xml:space="preserve">
+    <value>User task notification successfully updated.</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>You are not authorized to access this information.</value>
+  </data>
+  <data name="TaskDeactivateInUseTask" xml:space="preserve">
+    <value>Unable to deactivate task, task is currently active.</value>
+  </data>
+  <data name="AttStatusUpdateSuccess" xml:space="preserve">
+    <value>User attendance status successfully updated.</value>
+  </data>
+  <data name="TaskNameMissingErr" xml:space="preserve">
+    <value>Task name is required.</value>
+  </data>
+  <data name="TaskNumberMissingErr" xml:space="preserve">
+    <value>Task number is required.</value>
+  </data>
+  <data name="TaskNumberExceedsCharacterLimit" xml:space="preserve">
+    <value>Task ID must not exceed 12 characters</value>
+  </data>
+  <data name="EODDeniedStatusNote" xml:space="preserve">
+    <value>The corresponding EOD report for this chronological data is "DENIED" Aprroval.</value>
+  </data>
+  <data name="EODPendingStatusNote" xml:space="preserve">
+    <value>The corresponding EOD report for this chronological data is still "PENDING" for Aprroval.</value>
+  </data>
+  <data name="TaskDescriptionTooLongErr" xml:space="preserve">
+    <value>Task Description is too long, allowed characters is 250</value>
+  </data>
+  <data name="TaskNameTooLongErr" xml:space="preserve">
+    <value>Task name is too long, allowed characters is 150</value>
+  </data>
+  <data name="TaskGroupNameMissingErr" xml:space="preserve">
+    <value>Task group name is required.</value>
+  </data>
+  <data name="TaskIsActiveError" xml:space="preserve">
+    <value>Invalid request, task is currently active</value>
+  </data>
+  <data name="InvalidTaskToActivate" xml:space="preserve">
+    <value>Task is no longer assigned to you. please refresh page.</value>
+  </data>
+  <data name="TaskAssigneeAddStatus" xml:space="preserve">
+    <value>{0} users is/are assigned to the task.</value>
+  </data>
+  <data name="TaskAssigneeRemovalError" xml:space="preserve">
+    <value>Removal of assignee {0} from task has failed. The user is currently active with the task.</value>
+  </data>
+  <data name="TaskAssigneeRemoveStatus" xml:space="preserve">
+    <value>{0} users is/are removed from the task.</value>
+  </data>
+  <data name="LocationSuccessAdd" xml:space="preserve">
+    <value>Location successfully added.</value>
+  </data>
+  <data name="LocationSuccessUpdate" xml:space="preserve">
+    <value>Location successfully updated.</value>
+  </data>
+  <data name="LocationExist" xml:space="preserve">
+    <value>Location details already exist.</value>
+  </data>
+  <data name="User401" xml:space="preserve">
+    <value>You are not authorized for this request.</value>
+  </data>
+  <data name="TagSuccessAssign" xml:space="preserve">
+    <value>Tag successfully assigned.</value>
+  </data>
+  <data name="TagDuplicateName" xml:space="preserve">
+    <value>Tag name already exists.</value>
+  </data>
+  <data name="TagSuccessDelete" xml:space="preserve">
+    <value>Tag successfully deleted.</value>
+  </data>
+  <data name="TagSuccessRemove" xml:space="preserve">
+    <value>Tag successfully removed from assigment.</value>
+  </data>
+  <data name="TagSuccessUpdate" xml:space="preserve">
+    <value>Tag successfully updated.</value>
+  </data>
+  <data name="TagSuccessAdd" xml:space="preserve">
+    <value>Tag successfully added.</value>
+  </data>
+  <data name="UserIPRestricted" xml:space="preserve">
+    <value>You are attempting to access IOM from an unauthorized location. Please contact your supervisor or manager.</value>
+  </data>
+  <data name="UserIPRestrictedKEy" xml:space="preserve">
+    <value>UserIPRestricted</value>
+  </data>
+  <data name="IPWhitelistEntrySuccessAdd" xml:space="preserve">
+    <value>IP Address successfully added to whitelist.</value>
+  </data>
+  <data name="IPWhitelistEntrySuccessUpdate" xml:space="preserve">
+    <value>IP Address successfully updated from whitelist.</value>
+  </data>
+  <data name="IPWhitelistEntryError" xml:space="preserve">
+    <value>IP Address already exists.</value>
+  </data>
+  <data name="EmailNotificationSuccessUpdate" xml:space="preserve">
+    <value>Email notification successfully updated.</value>
+  </data>
+  <data name="UserShiftSuccessUpdate" xml:space="preserve">
+    <value>Shift detail sucessfully updated.</value>
+  </data>
+</root>

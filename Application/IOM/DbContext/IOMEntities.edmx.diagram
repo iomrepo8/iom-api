@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="135450845bca46998f72aebbc5ffae6f" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="IOM.DbContext.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.AccountMember" Width="1.5" PointX="16.5" PointY="42.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.Account" Width="1.5" PointX="3.75" PointY="21.625" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetModule" Width="1.5" PointX="3.75" PointY="30" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetRole" Width="1.5" PointX="0.75" PointY="34.375" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="75.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="44.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetUserPermission" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.AspNetUser" Width="1.5" PointX="3" PointY="40.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.AttendanceOTUpdate" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.AttendanceStatusOption" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.AttendanceStatusUpdate" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.EmployeeShift" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.EmployeeStatu" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.EODReport" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.EODTaskItem" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.IOMTask" Width="1.5" PointX="6" PointY="51.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.IOMTeamTask" Width="1.5" PointX="11.25" PointY="32.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.IpWhitelist" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.Location" Width="1.5" PointX="3.75" PointY="25.875" />
+        <EntityTypeShape EntityType="IOM.DbContext.Notification" Width="1.5" PointX="13.5" PointY="63.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.NotificationRecipientRole" Width="1.5" PointX="3" PointY="34.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.NotificationSetting" Width="1.5" PointX="0.75" PointY="30" />
+        <EntityTypeShape EntityType="IOM.DbContext.NotificationType" Width="1.5" PointX="11.25" PointY="36.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.RolePermission" Width="1.5" PointX="6" PointY="33.875" />
+        <EntityTypeShape EntityType="IOM.DbContext.Seat" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.SystemLog" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.Tag" Width="1.5" PointX="11.25" PointY="48.375" />
+        <EntityTypeShape EntityType="IOM.DbContext.TaskComment" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.TaskGroupItem" Width="1.5" PointX="8.25" PointY="50.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.TaskGroup" Width="1.5" PointX="6" PointY="47.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.TaskHistory" Width="1.5" PointX="16.5" PointY="37.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.TaskHistoryType" Width="1.5" PointX="14.25" PointY="33.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamClientPOC" Width="1.5" PointX="13.5" PointY="43.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamDayOff" Width="1.5" PointX="8.25" PointY="24" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamHoliday" Width="1.5" PointX="8.25" PointY="20.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamManager" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamMember" Width="1.5" PointX="16.5" PointY="46.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.Team" Width="1.5" PointX="6" PointY="22.625" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamSupervisor" Width="1.5" PointX="5.25" PointY="40.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamTaskGroup" Width="1.5" PointX="8.25" PointY="34.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.TeamTask" Width="1.5" PointX="8.25" PointY="27.5" />
+        <EntityTypeShape EntityType="IOM.DbContext.TimeZone" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserDayOff" Width="1.5" PointX="13.5" PointY="68" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserDetail" Width="1.5" PointX="11.25" PointY="39.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserImageFile" Width="1.5" PointX="13.5" PointY="70.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserNotificationSetting" Width="1.5" PointX="13.5" PointY="36.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserShiftDetail" Width="1.5" PointX="13.5" PointY="39.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserTag" Width="1.5" PointX="13.5" PointY="46.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserTask" Width="1.5" PointX="8.25" PointY="37.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserTaskGroup" Width="1.5" PointX="8.25" PointY="42.25" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserTaskNotification" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.UserWorkDay" Width="1.5" PointX="13.5" PointY="59.875" />
+        <EntityTypeShape EntityType="IOM.DbContext.vw_ActiveUsers" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.vw_AgentTeamSupervisors" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.vw_AllUsers" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.vw_AttendanceDefaultView" Width="2.875" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.vw_TaskClocker" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IOM.DbContext.database_firewall_rules" Width="1.5" PointX="6.75" PointY="12.75" />
+        <AssociationConnector Association="IOM.DbContext.FK_AccountMember_Account" />
+        <AssociationConnector Association="IOM.DbContext.FK_AccountMember_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.Teams_fk" />
+        <AssociationConnector Association="IOM.DbContext.FK_RolePermissions_AspNetModules" />
+        <AssociationConnector Association="IOM.DbContext.FK_NotificationRecipientRole_Role" />
+        <AssociationConnector Association="IOM.DbContext.FK_RolePermissions_ToAspNetRoles" />
+        <AssociationConnector Association="IOM.DbContext.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="IOM.DbContext.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTask_AspNetUsers" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTaskGroup_AspNetUsers" />
+        <AssociationConnector Association="IOM.DbContext.TeamSupervisors_fk2" />
+        <AssociationConnector Association="IOM.DbContext.UserDetailModels_fk" />
+        <AssociationConnector Association="IOM.DbContext.FK_IOMTeamTask_IOMTasks" />
+        <AssociationConnector Association="IOM.DbContext.FK_TaskGroupItems_IOMTasks" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTask_IOMTasks" />
+        <AssociationConnector Association="IOM.DbContext.FK_IOMTeamTask_Teams" />
+        <AssociationConnector Association="IOM.DbContext.FK_Teams_Location" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserDetails_Location" />
+        <AssociationConnector Association="IOM.DbContext.FK_Notification_Sender" />
+        <AssociationConnector Association="IOM.DbContext.FK_Notification_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.FK_NotificationRecipientRole_NotificationSetting" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserNotificationSetting_NotificationType" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTag_Tag" />
+        <AssociationConnector Association="IOM.DbContext.FK_TaskGroupItems_TaskGroups" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamTaskGroup_TaskGroups" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTask_TaskGroups" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTaskGroup_TaskGroups" />
+        <AssociationConnector Association="IOM.DbContext.FK_TaskHistory_ToTable" />
+        <AssociationConnector Association="IOM.DbContext.FK_TaskHistory_ToTable_1" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamClientPOC_Team" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamClientPOC_UserDetail" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamDayOff_Teams" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamHolidays_Teams" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamMember_Teams" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamMember_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.FK_TeamTaskGroup_Teams" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTask_Teams" />
+        <AssociationConnector Association="IOM.DbContext.TeamSupervisors_fk" />
+        <AssociationConnector Association="IOM.DbContext.TeamTask_fk" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserDayOff_ToTable" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserImageFile_ToTable" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserNotificationSetting_UserDetail" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserShiftDetail_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserTag_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.FK_UserWorkDay_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.AspNetUserRoles" />
+        <EntityTypeShape EntityType="IOM.DbContext.AttendanceRow" Width="1.5" PointX="15.75" PointY="50.125" />
+        <EntityTypeShape EntityType="IOM.DbContext.Attendance" Width="1.5" PointX="13.5" PointY="49.875" IsExpanded="true" />
+        <AssociationConnector Association="IOM.DbContext.FK_Attendance_UserDetails" />
+        <AssociationConnector Association="IOM.DbContext.FK_AttendanceRow_ToAttendance" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
